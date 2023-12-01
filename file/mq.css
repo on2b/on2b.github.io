@@ -1,0 +1,22 @@
+
+.marquee-container {
+width: 100%;
+overflow: hidden;
+        }
+
+.marquee-text {
+color: lightgreen;
+white-space: nowrap;
+font-weight: bold;
+font-family: 'Ionicons', sans-serif; /* Ionicons font family */
+animation: marqueeAnimation 20s linear infinite;
+        }
+
+@keyframes marqueeAnimation {
+0% {
+transform: translateX(100%);
+}
+100% {
+ transform: translateX(-100%);
+ }
+        }
