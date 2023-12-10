@@ -1,37 +1,256 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<!--[if IE 7 ]>    <html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en-gb" class="isie ie8 oldie no-js"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en-gb" class="isie ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en-gb" class="no-js"> <!--<![endif]-->
 <head>
-
-<style>
-body{
-background-color: black;
-color: white;
-}
-
-h1 {
-color: red;
-}
-
-h6{
-color: red;
-text-decoration: underline;
-}
-</style>
-
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-<title>Access Denied</title>
-
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--[if lt IE 9]> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->	
+	<title>On2B - Online Business Community</title>	
+	<meta name="description" content="">
+	<meta name="Sajedul Islam" content="On2B">    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->    
+	<!--[if lte IE 8]>
+		<script type="text/javascript" src="http://explorercanvas.googlecode.com/svn/trunk/excanvas.js"></script>
+	<![endif]-->    
+<link rel="stylesheet" href="css/bootstrap.min.css" />     
+<link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />	
+<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/da-slider.css" />
+<link rel="stylesheet" href="css/styles.css"/>
+<!-- Font Awesome -->
+<link href="font/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
-<div class="w3-display-middle">
-<h1 class="w3-jumbo w3-animate-top w3-center"><code>Access Denied</code></h1>
-<hr class="w3-border-white w3-animate-left" style="margin:auto;width:50%">
-<h3 class="w3-center w3-animate-right">You dont have permission to view this site.</h3>
-<h3 class="w3-center w3-animate-zoom">&#128683; &#x1F6AB; &#128683; &#x1F6AB;</h3>
-<h6 class="w3-center w3-animate-zoom">error code:403 forbidden</h6>
-</div>
+<header class="header">
+	<div class="container">
+		<nav class="navbar navbar-inverse" role="navigation">
+        	<div class="navbar-header">
+	            <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+	            </button>
+	            <a href="#" class="navbar-brand scroll-top logo"><b>Online</b>Business</a>
+        	</div>
+        	<!--/.navbar-header-->
+	        <div id="main-nav" class="collapse navbar-collapse">
+	            <ul class="nav navbar-nav" id="mainNav">
+		            <li class="active"><a href="#home" class="scroll-link">Home</a></li>
+					<li><a href="#aboutUs" class="scroll-link">About Us</a></li>
+					<li><a href="#services" class="scroll-link">Services</a></li>
+					<li><a href="#contactUs" class="scroll-link">Contact Us</a></li> 
+	            </ul>
+	        </div>
+	        <!--/.navbar-collapse-->
+	    </nav>
+	    <!--/.navbar-->
+	</div>
+	<!--/.container-->
+</header>
+<!--/.header-->
+<div id="#top"></div>
+<section id="home">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+        <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+		<li data-target="#myCarousel" data-slide-to="3" class=""></li>
+		<li data-target="#myCarousel" data-slide-to="4" class=""></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item">
+          <img data-src="images/chess-2.jpg" alt="First slide" src="images/p1.jpg" />
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item active">
+          <img data-src="images/apple.jpg" alt="Second slide" src="images/p2.jpg">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img data-src="images/windmills.jpg" alt="Third slide" src="images/p3.jpg">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img data-src="images/chess-2.jpg" alt="First slide" src="images/p4.jpg" />
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img data-src="images/chess-2.jpg" alt="First slide" src="images/p5.jpg" />
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+<div class="actionPanel">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-9 ">
+                        <h3> To learn more contact us via WhatsApp </h3>
+                    </div>
+                    <div class="col-sm-3 ">
+                        <a href="https://api.whatsapp.com/send?phone=8801954901220" class="btn btn-extra-large btn-primary spclBtn">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+<section id="aboutUs" class="page-section darkBg pDark pdingBtm30">
+	<div class="container">
+							    <div class="heading text-center">
+								<!-- Heading -->
+								<h2>About Us</h2>								 
+								<p>Unleashing limitless opportunities: Your one-stop digital hub for seamless multi-business collaboration, innovation, and growth in a connected world.</p>
+								
+								</br>
+								<div class="marquee-container">
+								<div class="marquee-text">
+								Entertainment unlocked. Download endless content and earn online with our digital tools. | বিনোদন উন্মুক্ত, আমাদের ডিজিটাল সরঞ্জাম দিয়ে অন্তহীন বিষয়বস্তু ডাউনলোড করুন এবং অনলাইনে উপার্জন করুন।
+								</div>
+								</div>
+								
+							</div>
+						</div>
+	<!--/.container-->
+</section>
+
+<section id="services" class="page-section">
+	<div class="container">
+		    <div class="heading text-center">
+								<!-- Heading -->
+								<h2>Services</h2>								
+								<p>We provide all the digital services.</p>
+							</div>
+		<div class="row">
+
+                  <!-- item -->
+                  <div class="col-md-4 text-center"> 
+                      <i class="fa fa-globe fa-2x circle"></i>
+                        <h3>Live TV and <span class="id-color">OTT Platform</span></h3>
+                             <p>Entertainment unleashed: Stream, binge, and explore on our OTT platform.</p>                     
+                  </div><!-- end:-->
+                  <!-- item -->
+                  <div class="col-md-4 text-center"> 
+                        <i class="fa fa-desktop fa-2x circle"></i> 
+                        <h3>Digital Content <span class="id-color">Downloading</span></h3>
+                             <p>Instant downloads, endless content: Your go-to platform for digital entertainment.</p>                    
+                  </div><!-- end: -->
+
+                  <!-- item -->
+                  <div class="col-md-4 text-center"> 
+                      <i class="fa fa-tablet fa-2x circle"></i>
+                        <h3>Webtools and <span class="id-color">Earning</span></h3>
+                             <p>Webtools empower, online ventures: Earning possibilities at your fingertips.</p>                     
+                  </div><!-- end:-->
+
+                </div>
+	</div>
+	<!--/.container-->
+</section> 
+
+<section id="contactUs" class="page-section">
+	<div class="container">
+    
+		<div class="row">
+                <div class="heading text-center">
+								<!-- Heading -->
+								<h2>Contact Us</h2> 
+								<p>If you have any query or require any further information, please contact us via <a href="https://api.whatsapp.com/send?phone=%2B8801954901220" target="_blank" style="color: red;"><i class="fa fa-whatsapp"></i>WhatsApp</a>.</p>
+							</div> 
+            </div>
+
+			<div class="row mrgn30">
+				<center><div class="button-container">
+									<a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.facebook.com/On24lineBusiness" rel="tooltip" title="Follow me on Facebook"><i class="fa fa-facebook"></i></a>
+									<a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.instagram.com/on.business24" rel="tooltip" title="Follow me on Instagram"><i class="fa fa-instagram"></i></a>
+					</div>
+				</center>
+				
+			</div>
+        </div>
+	<!--/.container-->
+</section> 
+<!--/.page-section-->
+<section class="copyright">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center"> Copyright &copy; <a href="https://sajedulislamtushar.blogspot.com/"> OnlineBusiness </a> </div>
+    </div>
+    <!-- / .row --> 
+  </div>
+   
+</section>
+    <a href="#top" class="topHome"><i class="fa fa-chevron-up fa-2x"></i></a>
+	
+<!--[if lte IE 8]><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><![endif]-->
+<script src="js/modernizr-latest.js"></script>
+<script src="js/jquery-1.8.2.min.js" type="text/javascript"></script>    
+<script src="js/bootstrap.min.js" type="text/javascript"></script>	 
+<script src="js/jquery.isotope.min.js" type="text/javascript"></script>
+<script src="js/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script> 
+<script src="js/jquery.nav.js" type="text/javascript"></script>
+<script src="js/jquery.cslider.js" type="text/javascript"></script> 
+<script src="js/custom.js" type="text/javascript"></script>
+
+
+<!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "103205842368033");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v13.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+	
+	
 </body>
 </html>
