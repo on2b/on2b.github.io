@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
   <style>
     body {
       margin: 0;
       padding: 0;
-      height: 100vh;
       background-color: #f2f2f2;
     }
 
@@ -17,41 +17,63 @@
       overflow: hidden;
     }
 
-    #video-player {
+    #fluid_video_wrapper_video {
       width: 100%;
-      height: auto;
-      display: block;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      position: relative;
     }
 
-    #video-poster {
+    #video-id {
       width: 100%;
-      height: auto;
+      height: 100%;
       position: absolute;
       top: 0;
       left: 0;
-      z-index: 1;
     }
   </style>
 </head>
 <body>
 
 <div id="video-container">
-  <img id="video-poster" src="##" alt="Video Poster">
-  <video id="video-player" controls preload="metadata">
-    <source src="https://cdn.freevidco.com/color%20of.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <div id="fluid_video_wrapper_video" class="fluid_video_wrapper fluid_player_layout_default">
+    <video id="video-id" class="paused" preload="auto" poster="https://fullxcinema.com/wp-content/uploads/2019/02/2cc376270cfe624392e5b60a1f1b6ac4.5-1.jpg" playsinline="" webkit-playsinline="" style="cursor: none;">
+      <source src="https://cdn.freevidco.com/color%20of.mp4" type="video/mp4">
+    </video>
+    <!-- Your provided player controls here -->
+    <!-- ... -->
+  </div>
 </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var videoContainer = document.getElementById('video-container');
-    var videoPlayer = document.getElementById('video-player');
-    var videoPoster = document.getElementById('video-poster');
-
-    videoPlayer.addEventListener('loadedmetadata', function () {
-      videoPoster.style.display = 'none';
-      videoPlayer.style.display = 'block';
+    fluidPlayer('video-id', {
+      "layoutControls": {
+        "controlBar": {
+          "autoHideTimeout": 3,
+          "animated": true,
+          "autoHide": true
+        },
+        "htmlOnPauseBlock": {
+          "html": null,
+          "height": null,
+          "width": null
+        },
+        "autoPlay": true,
+        "mute": true,
+        "allowTheatre": true,
+        "playPauseAnimation": true,
+        "playbackRateEnabled": true,
+        "allowDownload": false,
+        "playButtonShowing": true,
+        "fillToContainer": false,
+        "posterImage": ""
+      },
+      "vastOptions": {
+        "adList": [],
+        "adCTAText": false,
+        "adCTATextPosition": ""
+      }
     });
   });
 </script>
