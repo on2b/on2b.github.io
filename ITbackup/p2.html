@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #f2f2f2;
+    }
+
+    #video-container {
+      max-width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #video-player {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    #video-poster {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div id="video-container">
+  <img id="video-poster" src="##" alt="Video Poster">
+  <video id="video-player" controls preload="metadata">
+    <source src="https://cdn.freevidco.com/color%20of.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var videoContainer = document.getElementById('video-container');
+    var videoPlayer = document.getElementById('video-player');
+    var videoPoster = document.getElementById('video-poster');
+
+    videoPlayer.addEventListener('loadedmetadata', function () {
+      videoPoster.style.display = 'none';
+      videoPlayer.style.display = 'block';
+    });
+  });
+</script>
+
+</body>
+</html>
