@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #video-container {
+      position: relative;
+      width: 100%;
+      max-width: 100vw;
+      overflow: hidden;
+    }
+
+    #video-id {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    #placeholder-poster {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="video-container">
+  <video id="video-id" controls>
+    <source src="https://cdn.freevidco.com/color%20of.mp4" type="video/mp4" />
+    <img id="placeholder-poster" src="https://via.placeholder.com/1920x1080" alt="Video Poster">
+  </video>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var videoContainer = document.getElementById('video-container');
+    var videoPlayer = document.getElementById('video-id');
+    var placeholderPoster = document.getElementById('placeholder-poster');
+
+    videoPlayer.addEventListener('loadedmetadata', function () {
+      placeholderPoster.style.display = 'none';
+      videoPlayer.style.display = 'block';
+    });
+  });
+</script>
+
+<script>
+  var myFP = fluidPlayer('video-id', {
+    "layoutControls": {
+      "controlBar": {
+        "autoHideTimeout": 3,
+        "animated": true,
+        "autoHide": true
+      },
+      "htmlOnPauseBlock": {
+        "html": null,
+        "height": null,
+        "width": null
+      },
+      "autoPlay": true,
+      "mute": true,
+      "allowTheatre": true,
+      "playPauseAnimation": true,
+      "playbackRateEnabled": true,
+      "allowDownload": false,
+      "playButtonShowing": true,
+      "fillToContainer": false,
+      "posterImage": ""
+    },
+    "vastOptions": {
+      "adList": [],
+      "adCTAText": false,
+      "adCTATextPosition": ""
+    }
+  });
+</script>
+
+</body>
+</html>
