@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        #loading {
+            display: none;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        #loading::after {
+            content: " . . .";
+            animation: dots 1s infinite;
+        }
+
+        @keyframes dots {
+            0% {
+                content: " .";
+            }
+            33% {
+                content: " . .";
+            }
+            66% {
+                content: " . . .";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">Redirecting .</div>
+    <script>
+        const urlParam = new URLSearchParams(window.location.search).get("R");
+
+        if (urlParam) {
+            // Display the "Redirecting..." message
+            const loadingDiv = document.getElementById("loading");
+            loadingDiv.style.display = "block";
+
+            // Redirect to the specified URL after a brief delay
+            setTimeout(() => {
+                window.location.href = urlParam;
+            }, 2000); // Adjust the delay as needed
+        } else {
+            document.write("URL parameter 'redirect' is missing.");
+        }
+    </script>
+</body>
+</html>
