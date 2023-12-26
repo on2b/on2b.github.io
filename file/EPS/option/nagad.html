@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nagad Send Money Process</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #process-container {
+            margin-top: 20px;
+        }
+
+        .language-button {
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Nagad Send Money Process</h1>
+        <div id="process-container">
+            <!-- Content will be dynamically changed based on language -->
+        </div>
+		
+    <div><center> 
+		<a href="https://www.youtube.com/watch?v=wvUnAiYmueM" target="_blank">Nagad Video Tutorial</a> </br>
+    </center> </div>
+		
+        <div class="language-button">
+            <button onclick="changeLanguage('en')">English</button>
+            <button onclick="changeLanguage('bn')">বাংলা</button>
+        </div>
+    </div>
+
+    <script>
+        let language = 'en'; // Default language is English
+
+        const processContainer = document.getElementById('process-container');
+
+        function changeLanguage(lang) {
+            language = lang;
+            renderProcess();
+        }
+
+        function renderProcess() {
+            const content = language === 'en' ? getEnglishProcess() : getBanglaProcess();
+            processContainer.innerHTML = content;
+        }
+
+        function getEnglishProcess() {
+            return `
+                <p><strong>Using USSD *167#:</strong></p>
+                <ol>
+                    <li>Dial *167#: Open your phone's dialer and dial *167#.</li>
+                    <li>Choose "Send Money": Select the option for "Send Money."</li>
+                    <li>Enter the recipient's number: Type in 01954901220 and press "Send."</li>
+                    <li>Enter the amount: Type the amount you want to send and press "Send."</li>
+                    <li>Enter your Nagad PIN: Carefully enter your Nagad PIN to confirm the transaction.</li>
+                    <li>Receive confirmation: You'll receive an SMS with the transaction details.</li>
+                </ol>
+                
+                <p><strong>Using the Nagad mobile app:</strong></p>
+                <ol>
+                    <li>Open the Nagad app: Launch the Nagad app on your smartphone.</li>
+                    <li>Tap "Send Money": Find and tap the "Send Money" option on the app's home screen.</li>
+                    <li>Select "Send to Mobile Account": Choose the option to send money to another mobile account.</li>
+                    <li>Enter the recipient's number: In the designated field, type in 01954901220.</li>
+                    <li>Enter the amount: Input the amount you wish to send.</li>
+                    <li>Add a reference (optional): If desired, you can add a reference or note for the transaction.</li>
+                    <li>Tap "Next": Proceed to the next step.</li>
+                    <li>Select payment method: Choose your preferred payment method, such as your Nagad account balance or linked bank account.</li>
+                    <li>Enter your Nagad PIN: Carefully enter your Nagad PIN to confirm the transaction.</li>
+                    <li>Receive confirmation: You'll receive an SMS and in-app notification confirming the successful transaction.</li>
+                </ol>
+                
+                <p><strong>Important reminders:</strong></p>
+                <ul>
+                    <li>Ensure you have sufficient balance in your chosen payment method to cover the transaction amount.</li>
+                    <li>Double-check the recipient's number before confirming to avoid errors.</li>
+                    <li>Always protect your Nagad PIN and never share it with anyone.</li>
+                    <li>If you encounter any issues, contact Nagad customer service for assistance.</li>
+                </ul>
+            `;
+        }
+
+        function getBanglaProcess() {
+            return `
+                <p><strong>নগদ USSD *167# এবং মোবাইল অ্যাপ ব্যবহার করে +8801954901220 নম্বরে টাকা পাঠানোর ধাপসমূহ:</strong></p>
+                <ol>
+                    <li><strong>USSD *167# ব্যবহার করে:</strong></li>
+                    <ol>
+                        <li>ডায়াল করুন *167#: আপনার ফোনের ডায়ালার খুলুন এবং *167# ডায়াল করুন।</li>
+                        <li>"টাকা পাঠান" নির্বাচন করুন: "টাকা পাঠান" এর জন্য অপশনটি নির্বাচন করুন।</li>
+                        <li>গ্রহণকারীর নম্বর লিখুন: 01954901220 লিখুন এবং "Send" টিপুন।</li>
+                        <li>টাকার পরিমাণ লিখুন: আপনি যে পরিমাণ টাকা পাঠাতে চান তা লিখুন এবং "Send" টিপুন।</li>
+                        <li>আপনার নগদ PIN লিখুন: লেনদেনটি নিশ্চিত করতে সাবধানে আপনার নগদ PIN লিখুন।</li>
+                        <li>নিশ্চিতকরণ পান: আপনি লেনদেনের বিবরণ সহ একটি SMS পাবেন।</li>
+                    </ol>
+                    
+                    <li><strong>নগদ মোবাইল অ্যাপ ব্যবহার করে:</strong></li>
+                    <ol>
+                        <li>নগদ অ্যাপ খুলুন: আপনার স্মার্টফোনে নগদ অ্যাপটি চালু করুন।</li>
+                        <li>"টাকা পাঠান" টিপুন: অ্যাপের হোম স্ক্রিনে "টাকা পাঠান" অপশনটি খুঁজে এবং টিপুন।</li>
+                        <li>"মোবাইল একাউন্টে পাঠান" নির্বাচন করুন: অন্য মোবাইল একাউন্টে টাকা পাঠানোর অপশনটি নির্বাচন করুন।</li>
+                        <li>গ্রহণকারীর নম্বর লিখুন: নির্দিষ্ট ফিল্ডে, 01954901220 লিখুন।</li>
+                        <li>টাকার পরিমাণ লিখুন: আপনি যে পরিমাণ টাকা পাঠাতে চান তা লিখুন।</li>
+                        <li>রেফারেন্স যোগ করুন (ঐচ্ছিক): যদি চান, লেনদেনের জন্য একটি রেফারেন্স বা নোট যোগ করতে পারেন।</li>
+                        <li>"পরবর্তী" টিপুন: পরবর্তী ধাপে অগ্রসর হোন।</li>
+                        <li>পেমেন্ট মেথড নির্বাচন করুন: আপনার পছন্দসই পেমেন্ট মেথড নির্বাচন করুন, যেমন আপনার নগদ অ্যাকাউন্ট ব্যালেন্স বা লিঙ্কড ব্যাঙ্ক অ্যাকাউন্ট।</li>
+                        <li>আপনার নগদ PIN লিখুন: লেনদেনটি নিশ্চিত করতে সাবধানে আপনার 5-ডিজিট নগদ PIN লিখুন।</li>
+                        <li>নিশ্চিতকরণ পান: আপনি একটি SMS এবং ইন-অ্যাপ বিজ্ঞপ্তি পাবেন যে লেনদেনটি সফলভাবে সম্পন্ন হয়েছে।</li>
+                    </ol>
+                    
+                    <li><strong>গুরুত্বপূর্ণ মন্তব্য:</strong></li>
+                    <ul>
+                        <li>আপনার নির্বাচিত পেমেন্ট মেথডে লেনদেনের পর্যাপ্ত মুদ্রা থাকতে নিশ্চিত হন।</li>
+                        <li>ত্রুটি এড়িয়ে চলতে হতে পরিশোধ করতে আপনি আগে থেকে গ্রহণকারীর নম্বর দিয়ে নিশ্চিত হন।</li>
+                        <li>সর্বদা আপনার নগদ PIN রক্ষা করুন এবং কাউকে সাথে ভাগ করবেন না।</li>
+                        <li>যদি আপনি কোনও সমস্যার সম্মুখীন, সাহায্যের জন্য নগদ কাস্টমার সার্ভিসে যোগাযোগ করুন।</li>
+                    </ul>
+                </ol>
+            `;
+        }
+
+        // Initial render
+        renderProcess();
+    </script>
+
+<script type="text/javascript">
+	document.addEventListener('contextmenu', 
+         event => event.preventDefault());
+</script>
+	
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bKash Send Money Process</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .content {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        #qrCodeImg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .lang-btn {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content" id="content">
+    <h2 id="processTitle">Send Money Process</h2>
+    <img id="qrCodeImg" src="nexuspay_qr.jpg" alt="NexusPay QR Code">
+    <p id="step1">1. Open the NexusPay app on your smartphone.</p>
+    <p id="step2">2. On the app's home screen, find and tap the "Scan QR" option.</p>
+    <p id="step3">3. Point your phone's camera at the NexusPay QR code displayed.</p>
+    <p id="step4">4. Confirm the payment amount.</p>
+    <p id="step5">5. Carefully enter your NexusPay PIN to authorize the payment.</p>
+    <p id="step6">6. You'll receive an SMS and in-app notification confirming the successful payment.</p>
+
+
+    <div><center> 
+		<a href="https://www.youtube.com/watch?v=McTK7saxLF8" target="_blank">Nexuspay Video Tutorial</a>
+    </center> </div>
+
+    <button class="lang-btn" onclick="changeLanguage()">Toggle Language</button>
+</div>
+
+<script>
+    let isEnglish = true;
+
+    function changeLanguage() {
+        isEnglish = !isEnglish;
+        updateLanguage();
+    }
+
+    function updateLanguage() {
+        const content = document.getElementById('content');
+        const processTitle = document.getElementById('processTitle');
+        const qrCodeImg = document.getElementById('qrCodeImg');
+        const step1 = document.getElementById('step1');
+        const step2 = document.getElementById('step2');
+        const step3 = document.getElementById('step3');
+        const step4 = document.getElementById('step4');
+        const step5 = document.getElementById('step5');
+        const step6 = document.getElementById('step6');
+
+        if (isEnglish) {
+            processTitle.innerText = 'Send Money Process';
+            step1.innerText = '1. Open the NexusPay app on your smartphone.';
+            step2.innerText = '2. On the app\'s home screen, find and tap the "Scan QR" option.';
+            step3.innerText = '3. Point your phone\'s camera at the NexusPay QR code displayed.';
+            step4.innerText = '4. Confirm the displayed amount matches your purchase total.';
+            step5.innerText = '5. Carefully enter your NexusPay PIN to authorize the payment.';
+            step6.innerText = '6. You\'ll receive an SMS and in-app notification confirming the successful payment.';
+        } else {
+            processTitle.innerText = 'টাকা পাঠানোর প্রক্রিয়া';
+            step1.innerText = '1. আপনার স্মার্টফোনে  NexusPay অ্যাপটি চালু করুন।';
+            step2.innerText = '2. অ্যাপের হোম স্ক্রিনে, "QR স্ক্যান করুন" অপশনটি খুঁজে এবং ট্যাপ করুন।';
+            step3.innerText = '3. প্রদর্শিত NexusPay QR কোডে আপনার ফোনের ক্যামেরাটি নির্দেশ করুন।';
+            step4.innerText = '4. নিশ্চিত করুন টাকার পরিমাণ।';
+            step5.innerText = '5. পেমেন্ট অনুমোদন করতে সাবধানে আপনার NexusPay PIN লিখুন।';
+            step6.innerText = '6. আপনি সফল পেমেন্টের নিশ্চিতকরণ সহ একটি SMS এবং অ্যাপের ভিতরের বিজ্ঞপ্তি পাবেন।';
+        }
+    }
+
+    // Initial language setup
+    updateLanguage();
+</script>
+<script type="text/javascript">
+	document.addEventListener('contextmenu', 
+         event => event.preventDefault());
+</script>
+
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Payment System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+        }
+
+        section {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .payment-option {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .payment-option img {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+        }
+
+        .instructions-container {
+            width: 100%;
+        }
+
+        .qr-code-container {
+            width: 100%;
+        }
+
+        .qr-code {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .output-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+            word-wrap: break-word;
+        }
+
+        .show-qr-button {
+			margin-top: 10px;
+			padding: 8px;
+			background-color: #ff5733; /* Change this to your desired color */
+			color: #fff;
+			border: none;
+			cursor: pointer;
+			text-decoration: none; /* Remove underline for links */
+			display: inline-block; /* Make it inline block to apply padding and margin */
+        }
+
+        .copy-button, .whatsapp-button {
+            margin-top: 10px;
+            padding: 8px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            display: none;
+        }
+
+        .copy-button {
+            margin-right: 10px;
+        }
+
+        section {
+            padding: 20px;
+            display: flex;
+            flex-direction: column; /* Change to column direction */
+            align-items: center; /* Center items horizontally */
+            text-align: center; /* Center text content */
+        }
+
+        /* Style the modal */
+        .modal {
+          display: none;
+          position: fixed;
+          z-index: 1;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgb(0,0,0);
+          background-color: rgba(0,0,0,0.9);
+        }
+
+        /* Style the modal content */
+        .modal-content {
+          position: relative;
+          margin: 5% auto;
+          padding: 20px;
+          width: 80%;
+          max-width: 600px;
+          background-color: #fefefe;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+          border-radius: 5px;
+        }
+
+        /* Style the close button */
+        .close {
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: 28px;
+          cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>External Payment System (EPS) </h1>
+		<h3>Choose Payment Option</h3>
+    </header>
+	</br>
+    <div class="payment-option">
+        <img src="bkash.jpg" alt="bKash" onclick="selectPaymentOption('bKash')">
+        <img src="rocket.jpg" alt="Rocket" onclick="selectPaymentOption('Rocket')">
+        <img src="nagad.jpg" alt="Nagad" onclick="selectPaymentOption('Nagad')">
+        <img src="nexuspay.jpg" alt="Nexus Pay" onclick="selectPaymentOption('Nexus Pay')">
+    </div>
+
+	</br>
+
+	<div><center><marquee style="text-align: justify; font-weight: bold; color: blue;">
+	To view the QR code for payment, please click the designated QR button only if you intend to make a payment using QR. | 
+	কেবলমাত্র যদি আপনি QR পেমেন্ট করতে চান তবে সংশ্লিষ্ট QR কোড প্রদর্শনের জন্য অনুগ্রহ করে সংশ্লিষ্ট QR বোতামে ক্লিক করুন।
+	&nbsp
+	Click on the Tutorial if you don't know the Send Money Process. | 
+	 আপনি যদি টাকা পাঠানোর প্রক্রিয়া না জানেন, তাহলে টিউটোরিয়ালটিতে ক্লিক করুন।
+	</marquee></center></div>
+
+	<div></br><div>
+		<button class="show-qr-button" onclick="showQR('bkashQrCode')">bKash QR</button>
+		<button class="show-qr-button" onclick="showQR('rocketQrCode')">Rocket QR</button>
+		<button class="show-qr-button" onclick="showQR('nagadQrCode')">Nagad QR</button>		
+		<button class="show-qr-button" onclick="showQR('nexusPayQrCode')">NexusPay QR</button>
+		
+	
+
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+				<span class="close" onclick="closeModal()">&times;</span>
+				<div id="popupContent">
+					<!-- QR codes will be dynamically inserted here -->
+					<div class="qr-code" id="bkashQrCode">
+						<img src="bkash_qr.jpg" alt="bKash QR Code">
+						<p>bKash</p>
+					</div>
+					<div class="qr-code" id="rocketQrCode">
+						<img src="rocket_qr.jpg" alt="Rocket QR Code">
+						<p>Rocket</p>
+					</div>
+					<div class="qr-code" id="nagadQrCode">
+						<img src="nagad_qr.jpg" alt="Nagad QR Code">
+						<p>Nagad</p>
+					</div>
+					<div class="qr-code" id="nexusPayQrCode">
+						<img src="nexuspay_qr.jpg" alt="Nexus Pay QR Code">
+						<p>Nexus Pay</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div></br></div>
+
+
+    <section>
+		<div id="instructions" class="instructions-container" style="display: none;">
+			<p id="instructionText"></p>
+
+            <label for="platform">Payment for Service Platform (Select from dropdown) :</label>
+            <select id="platform">
+                <option value="Dristy">Dristy</option>
+                <option value="eHub">eHub</option>
+                <option value="Wallet">Wallet</option>
+                <option value="ihub">ihub</option>
+                <option value="WebTools">WebTools</option>
+            </select>
+
+            <label for="amount">Payment Amount (BDT 20 to 30,000):</label>
+            <input type="number" id="amount" min="20" max="30000" placeholder="Enter amount">
+
+            <label for="accountNumber">Sender's Mobile or Account Number:</label>
+            <input type="text" id="accountNumber" placeholder="Enter mobile or account number">
+
+            <label for="transactionDate">Transaction Date (Write or Select from Calender):</label>
+            <input type="date" id="transactionDate">
+
+            <label for="transactionId">Transaction ID:</label>
+            <input type="text" id="transactionId" placeholder="Enter transaction ID">
+
+            <button onclick="generateCode()">Generate Code</button>
+            <div class="output-box" id="outputBox" style="display: none;"></div>
+            <button class="copy-button" id="copyButton" onclick="copyCode()">Click to Copy</button>
+            <button class="whatsapp-button" id="whatsappButton" onclick="submitViaWhatsApp()">Payment Verify on WhatsApp</button>
+            <p id="whatsappInstruction" style="display: none;">Copy the code and send it via WhatsApp to +8801954901220 for payment verification.</p>
+        </div>
+    </section>
+
+<script>
+    var selectedPaymentOption;
+
+	function selectPaymentOption(option) {
+			selectedPaymentOption = option;
+			var instructionTextElement = document.getElementById("instructionText");
+
+			// Display payment instructions and input fields
+			document.getElementById("instructions").style.display = "block";
+
+			// Display specific instructions based on the selected option
+			switch (option) {
+				case "bKash":
+					instructionTextElement.innerHTML = "Send Money to 01954901220 via bKash. Click on the <a href='option/bkash.html' target='_blank'>Tutorial</a> if you don't know the Send Money Process.";
+					break;
+				case "Rocket":
+					instructionTextElement.innerHTML = "Send Money to 01954901220 via Rocket. Click on the <a href='option/rocket.html' target='_blank'>Tutorial</a> if you don't know the Send Money Process.";
+					break;
+				case "Nagad":
+					instructionTextElement.innerHTML = "Send Money to 01954901220 via Nagad. Click on the <a href='option/nagad.html' target='_blank'>Tutorial</a> if you don't know the Send Money Process.";
+					break;
+				case "Nexus Pay":
+					var qrImageUrl = "nexuspay_qr.jpg"; // Replace with the actual path to your QR image
+					var tutorialUrl = "option/nexuspay.html"; // Replace with the actual path to your tutorial page
+					instructionTextElement.innerHTML = "Send Money to <a href='" + qrImageUrl + "' class='qr-button' target='_blank'>QR</a> via Nexus Pay. Click on the or <a href='" + tutorialUrl + "' class='tutorial-button' target='_blank'>Tutorial</a> if you don't know the Send Money Process.";
+					break;
+			}
+	}
+
+    function showQR(qrCodeId) {
+        // Display the modal
+        document.getElementById("myModal").style.display = "block";
+
+        // Hide all QR codes in the modal
+        var qrCodeContainers = document.querySelectorAll(".modal-content .qr-code");
+        qrCodeContainers.forEach(function (container) {
+            container.style.display = 'none';
+        });
+
+        // Display the selected QR code in the modal
+        var selectedQrCode = document.getElementById(qrCodeId);
+        selectedQrCode.style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    function generateCode() {
+        var platform = document.getElementById("platform").value;
+        var amount = document.getElementById("amount").value;
+        var accountNumber = document.getElementById("accountNumber").value;
+        var transactionDate = document.getElementById("transactionDate").value;
+        var transactionId = document.getElementById("transactionId").value;
+
+		// Form input validation
+		if (platform.trim() === "" || amount.trim() === "" || accountNumber.trim() === "" || transactionDate.trim() === "" || transactionId.trim() === "") {
+			alert("All fields must be filled out!");
+			return;
+		}		
+		
+       // Additional validation for amount
+       var parsedAmount = parseFloat(amount);
+       if (isNaN(parsedAmount) || parsedAmount < 20 || parsedAmount > 30000) {
+           alert("Amount must be between 20 and 30,000.");
+            return;
+        }		
+			
+       // Additional validation for transactionDate
+        var currentDate = new Date();
+        var selectedDate = new Date(transactionDate);
+
+		if (selectedDate > currentDate || (currentDate - selectedDate) / (1000 * 60 * 60 * 24) > 30) {
+           alert("Transaction Date must not be a future date or more than 30 days back from the current date.");
+            return;
+        }			
+		
+        var code = selectedPaymentOption + "_" + platform + "_" + amount + "_" + accountNumber + "_" + transactionDate + "_" + transactionId;
+
+        document.getElementById("outputBox").innerText = code;
+        document.getElementById("outputBox").style.display = "block";
+        document.getElementById("copyButton").style.display = "inline-block";
+        document.getElementById("whatsappButton").style.display = "inline-block";
+        document.getElementById("whatsappInstruction").style.display = "block";
+		
+		// Alert for successful code generation
+        alert("Code Generated successfully! See the code below this page and send it via WhatsApp for Verification.\n" + "Code is : " + code + "\nYou'll also find it below this page with copy and sending button.");
+
+    }
+
+    function copyCode() {
+        var code = document.getElementById("outputBox").innerText;
+        navigator.clipboard.writeText(code).then(function () {
+            alert("Code copied to clipboard!");
+        });
+    }
+
+    function submitViaWhatsApp() {
+        var code = document.getElementById("outputBox").innerText;
+        var whatsappUrl = "https://api.whatsapp.com/send?phone=8801954901220&text=" + encodeURIComponent(code);
+
+        // Open WhatsApp in a new window with the generated code copied
+        window.open(whatsappUrl, '_blank');
+    }
+	
+</script>
+
+<script type="text/javascript">
+	document.addEventListener('contextmenu', 
+         event => event.preventDefault());
+</script>
+
+</body>
+</html>
