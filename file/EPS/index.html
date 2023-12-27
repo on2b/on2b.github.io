@@ -165,11 +165,11 @@
 	</br>
 
 	<div><center><marquee style="text-align: justify; font-weight: bold; color: blue;">
-	To view the QR code for payment, please click the designated QR button only if you intend to make a payment using QR. | 
-	কেবলমাত্র যদি আপনি QR পেমেন্ট করতে চান তবে সংশ্লিষ্ট QR কোড প্রদর্শনের জন্য অনুগ্রহ করে সংশ্লিষ্ট QR বোতামে ক্লিক করুন।
-	&nbsp
+	To view the QR code for payment, please click the related QR button only if you intend to make a payment using QR. | 
+	কেবলমাত্র যদি আপনি  QR পেমেন্ট করতে চান তবে সংশ্লিষ্ট QR কোড প্রদর্শনের জন্য অনুগ্রহ করে সংশ্লিষ্ট  QR বোতামে ক্লিক করুন।
+	&nbsp;
 	Click on the Tutorial if you don't know the Send Money Process. | 
-	 আপনি যদি টাকা পাঠানোর প্রক্রিয়া না জানেন, তাহলে টিউটোরিয়ালটিতে ক্লিক করুন।
+	 আপনি যদি টাকা পাঠানোর প্রক্রিয়া না জানেন, তাহলে সংশ্লিষ্ট টিউটোরিয়ালটিতে ক্লিক করুন।
 	</marquee></center></div>
 
 	<div></br><div>
@@ -253,18 +253,18 @@
 			// Display specific instructions based on the selected option
 			switch (option) {
 				case "bKash":
-					instructionTextElement.innerHTML = "Send Money to 01954901220 via bKash. Click on the <a href='option/bkash.html' target='_blank'>Tutorial</a> if you don't know the Send Money Process.";
+					instructionTextElement.innerHTML = "Send Money to 01954901220 (bKash - Personal). Click on the <a href='option/bkash.html' target='_blank'>Tutorial</a> if you don't know the Send Money Process.";
 					break;
 				case "Rocket":
-					instructionTextElement.innerHTML = "Send Money to 01954901220 via Rocket. Click on the <a href='option/rocket.html' target='_blank'>Tutorial</a> if you don't know the Send Money Process.";
+					instructionTextElement.innerHTML = "Send Money to 01954901220 (Rocket - Personal). Click on the <a href='option/rocket.html' target='_blank'>Tutorial</a> if you don't know the Send Money Process.";
 					break;
 				case "Nagad":
-					instructionTextElement.innerHTML = "Send Money to 01954901220 via Nagad. Click on the <a href='option/nagad.html' target='_blank'>Tutorial</a> if you don't know the Send Money Process.";
+					instructionTextElement.innerHTML = "Send Money to 01954901220 (Nagad - Personal). Click on the <a href='option/nagad.html' target='_blank'>Tutorial</a> if you don't know the Send Money Process.";
 					break;
 				case "Nexus Pay":
 					var qrImageUrl = "nexuspay_qr.jpg"; // Replace with the actual path to your QR image
 					var tutorialUrl = "option/nexuspay.html"; // Replace with the actual path to your tutorial page
-					instructionTextElement.innerHTML = "Send Money to <a href='" + qrImageUrl + "' class='qr-button' target='_blank'>QR</a> via Nexus Pay. Click on the or <a href='" + tutorialUrl + "' class='tutorial-button' target='_blank'>Tutorial</a> if you don't know the Send Money Process.";
+					instructionTextElement.innerHTML = "Send Money by scanning this <a href='" + qrImageUrl + "' class='qr-button' target='_blank'>QR</a> via Nexus Pay. Click on the or <a href='" + tutorialUrl + "' class='tutorial-button' target='_blank'>Tutorial</a> if you don't know the Send Money Process.";
 					break;
 			}
 	}
