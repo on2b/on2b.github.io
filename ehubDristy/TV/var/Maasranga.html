@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<link href="video-js.min.css" rel="stylesheet"/>
+		<script src="video.min.js"></script>
+		<title>Gaanbangla HD</title>
+	</head>
+	<body>
+		<video-js id="vid1" class="video-js vjs-default-skin" poster="pbg.jpg" controls preload="auto" data-setup='{ "fluid" : true }'>
+			<source
+				src="https://tvs1.aynaott.com/maasrangatv/index.m3u8?hdnts=st=1703951869~exp=1703995069~acl=/*~data=103.142.184.242-WEB~hmac=61722c5bda35f289a9763ef22c934ff13772fd9978012fdcbbb162b1fd9d1a25"
+				type="application/x-mpegURL"
+			/>
+		</video-js>
+
+		<script>
+			const vid = document.getElementById('vid1');
+			const player = videojs(vid);
+		</script>
+		
+	    <script type="text/javascript">
+		document.addEventListener('contextmenu', 
+                        event => event.preventDefault());
+		</script>
+		
+	</body>
+</html>
