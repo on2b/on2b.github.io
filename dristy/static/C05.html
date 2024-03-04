@@ -16,17 +16,16 @@
 		</style>
 	</head>
 	<body>
-		<div>  <!-- Audio Link -->
-			<video-js id="vid2" class="video-js vjs-default-skin" poster="#" preload="auto" data-setup='{ "fluid" : true }'>
-				<source src="https://food-dlvr-ott.akamaized.net/primary/4/686a061683e44b518cdf57677e352ef3/index_17_0.m3u8" type="application/x-mpegURL"></source>
-			</video-js>
-		</div>
 		<div>
 			<video-js id="vid1" class="video-js vjs-default-skin" poster="pbg.jpg" controls preload="auto" data-setup='{ "fluid" : true }'>
 				<source src="https://food-dlvr-ott.akamaized.net/primary/4/686a061683e44b518cdf57677e352ef3/index_18.m3u8" type="application/x-mpegURL"></source>
 			</video-js>
 		</div>
-
+		<div>  <!-- Audio Link -->
+			<video-js id="vid2" class="video-js vjs-default-skin" poster="#" preload="auto" data-setup='{ "fluid" : true }'>
+				<source src="https://food-dlvr-ott.akamaized.net/primary/4/686a061683e44b518cdf57677e352ef3/index_17_0.m3u8" type="application/x-mpegURL"></source>
+			</video-js>
+		</div>
 		<script>
 			const vid1 = document.getElementById('vid1');
 			const player1 = videojs(vid1);
