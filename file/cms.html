@@ -99,7 +99,7 @@
     <div class="output-box" id="outputBox" style="display: none;"></div>
     <button class="copy-button" id="copyButton" onclick="copyCode()">Copy Code</button>
     <button class="whatsapp-button" id="whatsappButton" onclick="submitViaWhatsApp()">Send via WhatsApp</button>
-    <p id="whatsappInstruction" style="display: none;">Copy the code and send it via WhatsApp for verification.</p>
+    <p id="whatsappInstruction" style="display: none;">Copy the code and send it via WhatsApp to +8801954901220 for verification.</p>
 </section>
 
 <script>
@@ -137,7 +137,7 @@
 
     function submitViaWhatsApp() {
         var code = document.getElementById("outputBox").innerText;
-        var whatsappUrl = "https://api.whatsapp.com/send?text=" + encodeURIComponent(code);
+        var whatsappUrl = "https://api.whatsapp.com/send?phone=8801954901220&text=" + encodeURIComponent(code);
 
         window.open(whatsappUrl, '_blank');
     }
